@@ -123,6 +123,25 @@ function toggleMobileMenu() {
     navList.style.display = navList.style.display === 'none' ? 'flex' : 'none';
 }
 
+function toggleOlderPublications() {
+    const olderPubs = document.getElementById('older-publications');
+    const toggleText = document.getElementById('toggle-text');
+    const toggleIcon = document.getElementById('toggle-icon');
+    const toggleButton = document.querySelector('.collapse-toggle');
+    
+    if (olderPubs.style.display === 'none') {
+        olderPubs.style.display = 'block';
+        toggleText.textContent = 'Hide Earlier Publications (2009-2018)';
+        toggleIcon.classList.add('expanded');
+        toggleButton.classList.add('expanded');
+    } else {
+        olderPubs.style.display = 'none';
+        toggleText.textContent = 'Show Earlier Publications (2009-2018)';
+        toggleIcon.classList.remove('expanded');
+        toggleButton.classList.remove('expanded');
+    }
+}
+
 // Initialize animations on scroll
 const observerOptions = {
     threshold: 0.1,
